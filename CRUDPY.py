@@ -1,7 +1,7 @@
 import mysql.connector
 
 db = mysql.connector.connect(
-  host='localhost', database='student_record', username='root', password=''
+  host='localhost', database='student_record', username='root', password='root'
 )
 
 cursor = db.cursor()
@@ -78,7 +78,7 @@ def update():
       db.commit()
 
     elif option.upper() == "D":
-      query = '''UPDATE student SET FIRST_NAME, LAST_NAME, SECTION = %s WHERE STUDENT_ID = %s'''
+      query = '''UPDATE student SET FIRST_NAME = %s, LAST_NAME = %s, SECTION = %s WHERE STUDENT_ID = %s'''
       fname = input("Enter first name: ")
       lname = input("Enter last name: ")
       sec = input("Enter section: ")
